@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * @author: wujinxing
  * @date: 2019/1/9 20:58
- * @description: 希尔排序
+ * @description: 希尔排序 平均情况O(n1.5) 最好O(n) 最坏O(n2 or n1.5)
  */
 public class ShellSort {
     /**
@@ -18,7 +18,9 @@ public class ShellSort {
      */
     private static <T extends Comparable<? super T>> void incrementalInsertionSort(T[] a, int first, int last, int space){
         int unsorted, index;
+        //space一般为数组的一半，首个for循环是从first-firstspace-》末尾 两个相隔space距离为一组数比较
         for(unsorted = first+space; unsorted <= last; unsorted = unsorted+space){
+            //对应的值
             T nextToInsert = a[unsorted];
             for(index = unsorted-space; (index >= first)&&(nextToInsert.compareTo(a[index])< 0); index = index-space){
                 a[index+space] = a[index];
