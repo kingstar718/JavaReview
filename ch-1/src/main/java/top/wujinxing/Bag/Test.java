@@ -9,8 +9,8 @@ import java.util.ArrayList;
  */
 public class Test {
     public static void main(String[] args){
-
-        BagInterface<String> aBag = new ArrayBag<String>();
+        //数组list测试
+        /*BagInterface<String> aBag = new ArrayBag<String>();
 
         testIsFull(aBag,false);
 
@@ -34,7 +34,18 @@ public class Test {
                 "A","B","A","C","B","C","D","A","B","A","C","B","C","D","A","B","A","C","B","C","D","A","B","A","C","B","C","D"};
         BagInterface<String> bBag = new ResizableArrayBag<String>();
         testAdd(bBag,contentOfBag03);
-        testAdd(aBag,contentOfBag03);
+        testAdd(aBag,contentOfBag03);*/
+
+        //链表list测试
+        System.out.println("Create an empty bag:");
+        BagInterface<String> aBag = new LinkedBag<String>();
+        testIsFull(aBag,true);
+        displayBag(aBag);
+        String[] contentOfBag = {"A","B","A","C","B","C","D","A","B"};
+        testAdd(aBag,contentOfBag);
+        testIsFull(aBag,false);
+
+
     }
     private static void testAdd(BagInterface<String> aBag, String[] content){
         System.out.print("Adding to the bag: ");
