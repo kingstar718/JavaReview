@@ -8,9 +8,20 @@ package top.wujinxing.Stack;
 public class Test {
     @org.junit.Test
     public void test(){
-        StackInterface<String> stack = new LinkedStack<String>();
-        stack.push("Jim");
-        stack.push("Jill");
+        //StackInterface<String> stack = new LinkedStack<String>();
+        StackInterface<String> stack = new ArrayStack<String>();
+        System.out.println(stack.isEmpty());
+        stack.push("Aim");
+        stack.push("Bill");
+        stack.push("Cill");
+        stack.push("Dill");
+        stack.push("Eill");
+        stack.push("Fill");
         System.out.println(stack.peeK());
+        System.out.println(stack.isEmpty());
+        while (!stack.isEmpty()){
+            System.out.println(stack.pop());
+        }
+        System.out.println(stack.isEmpty());
     }
 }
