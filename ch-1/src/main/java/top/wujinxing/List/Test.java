@@ -71,4 +71,48 @@ public class Test {
         System.out.println(list.toArray());
 
     }
+
+    public class Node{
+        private int i;
+        private Node next;
+
+        public Node(int i, Node next) {
+            this.i = i;
+            this.next = next;
+        }
+
+        public int getI() {
+            return i;
+        }
+
+        public void setI(int i) {
+            this.i = i;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+    }
+
+    @org.junit.Test
+    public void test(){
+        Node firstNode = new Node(2,null);
+        Node newNode = new Node(3,null);
+        System.out.println("newNode.next: "+newNode.getNext());
+        System.out.println("newNode.i: "+newNode.getI());
+        newNode.setNext(firstNode);
+        System.out.println("------------------");
+        System.out.println("newNode.next: "+newNode.getNext());
+        System.out.println("newNode.i: "+newNode.getI());
+        firstNode = newNode;//将firstNode指向了newNode的对象
+        System.out.println("------------------");
+        System.out.println("newNode.next: "+newNode.getNext());
+        System.out.println("newNode.i: "+newNode.getI());
+        System.out.println("firstNode.next: "+firstNode.getNext());
+        System.out.println("firstNode.i: "+firstNode.getI());
+    }
 }
