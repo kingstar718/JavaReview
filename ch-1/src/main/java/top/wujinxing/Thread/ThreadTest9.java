@@ -12,7 +12,7 @@ public class ThreadTest9 {
             mt0.setPriority(5);
             mt0.start();
             MyThread4 mt1 = new MyThread4();
-            mt1.setPriority(4);
+            mt1.setPriority(4); //线程默认优先级为5， 可手动更改， 执行优先级大的线程
             mt1.start();
         }
     }
