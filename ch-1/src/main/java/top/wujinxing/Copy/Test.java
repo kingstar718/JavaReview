@@ -1,6 +1,6 @@
 package top.wujinxing.Copy;
 
-import org.apache.commons.beanutils.BeanUtils;
+//import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -114,13 +114,13 @@ public class Test {
         stu9.setNumber(123);
         stu9.setAddress(address);
         Student stu10 = new Student();
-        try {
+        /*try {
             BeanUtils.copyProperties(stu10,stu9);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
-        }
+        }*/
         System.out.println("Student7：" + stu9.getNumber() + " stu9的地址：" + stu9.getAddress().getAdd());
         System.out.println("Student8：" + stu8.getNumber() + " stu10的地址：" + stu10.getAddress().getAdd());
         //4.通过序列化实现兑现的复制
