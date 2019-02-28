@@ -5,7 +5,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 /**
  * @author: wujinxing
  * @date: 2019/2/28 14:06
- * @description:
+ * @description:    使用同步块来解决死锁的问题
  */
 public class Test11_string_syn {
     public static void main(String[] args){
@@ -17,18 +17,39 @@ public class Test11_string_syn {
     }
 }
 class Service11{
+    Object object1 = new Object();
+    public void methodA(){
+        synchronized (object1){
+            System.out.println("methodA begin");
+            boolean isContinueRun = true;
+            while (isContinueRun){
+            }
+            System.out.println("methodA end");
+        }
+    }
+    Object object2 = new Object();
+    public void methodB(){
+        synchronized (object2){
+            System.out.println("methodB begin");
+            System.out.println("methodB end");
+        }
+    }
+}
+//原来的Service，线程B会一直等待A，A一直不结束，B就一直在等待
+/*class Service11{
     synchronized public void methodA(){
         System.out.println("methodA begin");
         boolean isContinueRun = true;
         while (isContinueRun){
-            System.out.println("methodA end");
         }
+        System.out.println("methodA end");
+
     }
-    synchronized public void methodB(){
+    public void methodB(){
         System.out.println("methodB begin");
         System.out.println("methodB end");
     }
-}
+}*/
 //自定义线程类
 class Thread11A extends Thread{
     private Service11 service11;
@@ -36,7 +57,6 @@ class Thread11A extends Thread{
         super();
         this.service11 = service;
     }
-
     @Override
     public void run() {
         service11.methodA();
@@ -48,7 +68,6 @@ class Thread11B extends Thread{
         super();
         this.service11 = service;
     }
-
     @Override
     public void run() {
         service11.methodB();
