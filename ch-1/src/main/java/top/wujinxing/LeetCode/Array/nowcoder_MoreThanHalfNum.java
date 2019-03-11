@@ -2,13 +2,15 @@ package top.wujinxing.LeetCode.Array;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @author: wujinxing
  * @date: 2019/3/11 10:59
  * @description:
  * 输出数组中重复次数最多的元素，如果出现次数低于数组长度的一半，则返回0
  */
-public class MoreThanHalfNum_nowcode {
+public class nowcode_MoreThanHalfNum {
     public int MoreThanHalfNum_Solution(int [] array) {
         //一个数组
         //计算每个元素重复度，加进数组
@@ -39,12 +41,29 @@ public class MoreThanHalfNum_nowcode {
         }
     }
 
+    public int MoreThanHalfNum_Solution2(int[] array){
+        int len = array.length;
+        if (len<1) return 0;
+
+        int count = 0;
+        Arrays.sort(array);
+        int num = array[len/2];
+        for (int i = 0; i < len; i++){
+            if (num == array[i]) count++;
+        }
+        if (count <= (len/2)) num = 0;
+        return num;
+
+    }
+
     @Test
     public void test(){
         int[] a = {1,2,3,2,2,2,5,4,2};
         int[] b = {1,2,3,2,4,2,5,2,3};
         System.out.println(MoreThanHalfNum_Solution(a));
         System.out.println(MoreThanHalfNum_Solution(b));
+        System.out.println(MoreThanHalfNum_Solution2(a));
+        System.out.println(MoreThanHalfNum_Solution2(b));
 
     }
 }
