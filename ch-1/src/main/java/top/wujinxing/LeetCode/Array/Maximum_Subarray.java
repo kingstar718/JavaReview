@@ -1,7 +1,6 @@
 package top.wujinxing.LeetCode.Array;
 
 import org.junit.Test;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
  * @author: wujinxing

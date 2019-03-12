@@ -1,4 +1,4 @@
-package top.wujinxing.LeetCode.Array;
+package top.wujinxing.offer;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import org.junit.Test;
  * @date: 2019/3/11 13:45
  * @description:  在1-N内多少个包含1的数
  */
-public class nowcoder_NumberOf1Between1AndN {
+public class NumberOf1Between1AndN {
     public int NumberOf1Between1AndN_Solution(int n) {
         int count = 0;
         while(n>0){

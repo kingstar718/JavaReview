@@ -1,4 +1,4 @@
-package top.wujinxing.LeetCode.Array;
+package top.wujinxing.offer;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @description:
  * 输出数组中重复次数最多的元素，如果出现次数低于数组长度的一半，则返回0
  */
-public class nowcoder_MoreThanHalfNum {
+public class MoreThanHalfNum {
     public int MoreThanHalfNum_Solution(int [] array) {
         //一个数组
         //计算每个元素重复度，加进数组

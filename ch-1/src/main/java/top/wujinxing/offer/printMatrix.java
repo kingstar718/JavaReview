@@ -1,4 +1,4 @@
-package top.wujinxing.LeetCode.Array;
+package top.wujinxing.offer;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * 9  10 11 12
  * 13 14 15 16
  */
-public class nowcoder_printMatrix {
+public class printMatrix {
     public ArrayList<Integer> printMatrix(int[][] array){
         ArrayList<Integer> result = new ArrayList<>();
         if (array.length == 0) return result;
