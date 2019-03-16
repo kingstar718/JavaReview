@@ -25,8 +25,6 @@ public class Test3_FunctionalInterface {
         Converter<String, Integer> converter1 = Integer::valueOf;
         Integer converted1 = converter1.convert("123");
         System.out.println(converted); //123
-
-        
     }
 }
 
