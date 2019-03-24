@@ -3,7 +3,7 @@ package top.wujinxing.designpatterns.singleton;
 /**
  * @author: wujinxing
  * @date: 2019/3/23 22:41
- * @description:
+ * @description: 一个可被串行化的单例
  */
 public class SerSingleton implements java.io.Serializable{
     String name;
@@ -19,7 +19,7 @@ public class SerSingleton implements java.io.Serializable{
     public static void createString(){
         System.out.println("createString in Singleton");
     }
-    private Object readResolve(){   //阻止生成新的实例,总是返回当前对象
+    /*private Object readResolve(){   //阻止生成新的实例,总是返回当前对象
         return instance;
-    }
+    }*/
 }
